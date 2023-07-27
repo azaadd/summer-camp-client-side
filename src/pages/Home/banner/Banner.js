@@ -14,42 +14,42 @@ import img8 from '../../../assets/japanese.JPG';
 const Banner = () => {
     return (
         
-           <div>
-             <Carousel autoPlay>
-                <div className='w-full h-[450px]'>
+           
+             <Carousel autoPlay >
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img1} alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img4} alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img8} alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img7} alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img5} alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img6}  alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full'  src={img2} alt=''/>
                     
                 </div>
-                <div className='w-full h-[450px]'>
+                <div className='w-full h-[550px]'>
                     <img className='h-full' src={img3} alt=''/>
                     
                 </div>
             </Carousel>
-           </div>
+          
         
     );
 };
