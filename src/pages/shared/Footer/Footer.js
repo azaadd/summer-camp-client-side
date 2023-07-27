@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react
 const Footer = () => {
     return (
         <div>
-            <footer className="px-16 footer p-10 bg-base-300 text-base-content">
+            <footer className="px-16 footer p-10 bg-neutral text-neutral-content">
                 <div>
                     <img src="{logo}" alt="" />
                     <p>This is our language teaching school.<br />Learn your favorite language.</p>
