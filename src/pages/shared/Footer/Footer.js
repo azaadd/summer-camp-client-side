@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react
 const Footer = () => {
     return (
         <div>
-            <footer className="px-16 footer p-10 bg-neutral text-neutral-content">
+            <footer className="px-16 footer p-10 bg-base-200 text-base-content">
                 <div>
                     <img src="{logo}" alt="" />
                     <p>This is our language teaching school.<br />Learn your favorite language.</p>
@@ -39,7 +39,7 @@ const Footer = () => {
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <div>
-                    <p>Copyright © 2023 - All right reserved by Language School.</p>
+                    <p className='font-semibold'>Copyright © 2023 - All right reserved by Language School.</p>
                 </div>
             </footer>
         </div>

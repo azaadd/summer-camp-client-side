@@ -12,9 +12,9 @@ import { router } from './routes/Routes';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div>
+    
       <RouterProvider router={router} />
-    </div>
+    
   </React.StrictMode>
 );
 
