@@ -25,7 +25,7 @@ const Banner = () => {
                     
                 </div>
                 <div className='w-full h-[550px]'>
-                    <img className='h-full'  src={img8} alt=''/>
+                    <img className='h-full'  src={img3} alt=''/>
                     
                 </div>
                 <div className='w-full h-[550px]'>
@@ -45,7 +45,7 @@ const Banner = () => {
                     
                 </div>
                 <div className='w-full h-[550px]'>
-                    <img className='h-full' src={img3} alt=''/>
+                    <img className='h-full' src={img8} alt=''/>
                     
                 </div>
             </Carousel>

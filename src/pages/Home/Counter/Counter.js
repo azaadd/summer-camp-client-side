@@ -1,5 +1,4 @@
 import React from 'react';
-import './Counter.css'
 import CountUp from 'react-countup';
 import { useCountUp } from 'react-countup';
 // import CountUp from 'react-countup/build/CountUp';
@@ -17,7 +16,7 @@ const Counter = () => {
 
     return (
         <div className='flex gap-24 text-center justify-center py-8 bg-neutral-200 text-gray-700'>
-            
+
             <div className=''>
                 <CountUp
                     className='text-5xl font-bold'
