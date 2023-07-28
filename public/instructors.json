@@ -1,0 +1,107 @@
+[
+   
+    {
+        "_id": "64817dba6600b73c51dd3ad6",
+        "name": "Masud Answari",
+        "Lecturer": "Arabic Language",
+        "email": "answari@gmail.com",
+        "photoUrl": "https://everipedia.org/cdn-cgi/image/width=384/https://everipedia-storage.s3-accelerate.amazonaws.com/ProfilePics/omar-borkan-al-gala__09000.png",
+        "gender": "male",
+        "address": "Dhaka , Bangladesh",
+        "role": "instructor",
+        "about": "I simple instructors ",
+        "phone": "016560252154",
+        "skills": null
+    },
+    {
+        "_id": "6482c9563c89fb91c4f924b4",
+        "name": "Sakura sun",
+        "Lecturer": "Japanese language",
+        "email": "jarifalnafis1@gmail.com",
+        "photoUrl": "https://hajl.athuman.com/e/lp/online/img/teacher1.jpg",
+        "gender": "female",
+        "address": "Dhaka , Bangladesh",
+        "role": "instructor",
+        "phone": "041548545584",
+        "about": "",
+        "skills": null
+    },
+    {
+        "_id": "64841b305d43fff6d00ca2f1",
+        "name": "Rasel Ahamed",
+        "Lecturer": "Bangla Language",
+        "email": "hasibd4009@gmail.com",
+        "photoUrl": "https://media.wnyc.org/i/1860/1189/c/80/1/Bengali_Chowdhury.jpg",
+        "gender": "male",
+        "address": "ishwardi",
+        "role": "instructor",
+        "phone": "+8801858999414",
+        "about": "",
+        "skills": null
+    },
+    {
+        "_id": "64857a987958eb6ee8feced2",
+        "name": "Prokash",
+        "Lecturer": "Hindi Language",
+        "email": "test@rkb.tech",
+        "photoUrl": "https://akm-img-a-in.tosshub.com/sites/ichowk/fb_feed_images/story_image/201809/hindi-teacher-1820_091418012117.jpg",
+        "gender": "male",
+        "address": "Pabna",
+        "role": "instructor",
+        "phone": "34725610",
+        "about": "",
+        "skills": "Instructor"
+    },
+    {
+        "_id": "6485db7393ce971899dca9a0",
+        "name": "Jammay J.Montague",
+        "Lecturer": "France language",
+        "email": "test@test.com",
+        "photoUrl": "https://wurst.lu/wp-content/uploads/2018/04/french.png",
+        "gender": "female",
+        "address": "Dhaka",
+        "role": "instructor",
+        "phone": "37487458",
+        "about": "",
+        "skills": null
+    },
+    {
+        "_id": "64872c94d55d94e9bfa0008f",
+        "name": "Siking dua",
+        "Lecturer": "Chinese language",
+        "email": "akibd506@gmail.com",
+        "photoUrl": "https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/177445361MandarinChineseTeacher.jpg",
+        "gender": "male",
+        "address": "ishwardi",
+        "role": "instructor",
+        "phone": "01319373523",
+        "about": "",
+        "skills": null
+    },
+    {
+        "_id": "64872c94d55d94e9bfa0008f",
+        "name": "Frank wood",
+        "Lecturer": "English language",
+        "email": "akibd506@gmail.com",
+        "photoUrl": "https://www.kohkaf.com/uploaded-images/cat-subs/english-language-teacher.jpg",
+        "gender": "male",
+        "address": "ishwardi",
+        "role": "instructor",
+        "phone": "01319373523",
+        "about": "",
+        "skills": null
+    },
+    
+    {
+        "_id": "64874d82cfbc3adcf4ba88e3",
+        "name": "Monkeyaun ma",
+        "Lecturer": "Korean language",
+        "email": "mokbul1150@gmail.com",
+        "photoUrl": "http://language.ac.nz/images/Korean3.jpg",
+        "about": " ",
+        "address": "Bogura",
+        "phone": "32123",
+        "skills": null
+    }
+    
+]
