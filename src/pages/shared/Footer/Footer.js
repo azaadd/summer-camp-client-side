@@ -39,7 +39,7 @@ const Footer = () => {
             </footer>
             <footer className="footer footer-center p-4 bg-base-300 text-base-content">
                 <div>
-                    <p className='font-semibold'>Copyright © 2023 - All right reserved by Language School.</p>
+                    <p className='font-semibold text-lg'>Copyright © 2023 - All right reserved by Language School.</p>
                 </div>
             </footer>
         </div>
