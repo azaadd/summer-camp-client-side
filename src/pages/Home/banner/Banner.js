@@ -10,6 +10,7 @@ import img5 from '../../../assets/francis.jpg';
 import img6 from '../../../assets/korean.jpg';
 import img7 from '../../../assets/Arabic-language-teaching.jpg';
 import img8 from '../../../assets/japanese.JPG';
+import './Banner.css'
 
 const Banner = () => {
     return (
