@@ -9,7 +9,7 @@ import facilities5 from '../../../assets/experienceteacher.JPG';
 
 const Facilities = () => {
     return (
-        <div className='text-center mx-16 items-center md:flex gap-3 mt-6 mb-6'>
+        <div className='text-center mx-16 items-center md:flex gap-3 mt-16 mb-6'>
 
             <div className='md:w-1/2'>
 

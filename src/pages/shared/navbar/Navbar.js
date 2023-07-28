@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+
 
 const Navbar = () => {
 
     const navItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/instructors'>Instructors</Link></li>
+        <li className='mr-2'><Link to='/'>Home</Link></li>
+        <li className='mr-2'><Link to='/instructors'>Instructors</Link></li>
         
-        <li><Link to='/classes'>Classes</Link></li>
+        <li className='mr-2'><Link to='/classes'>Classes</Link></li>
         <li><Link to='/dashboard'>Dashboard</Link></li>
           
     </>

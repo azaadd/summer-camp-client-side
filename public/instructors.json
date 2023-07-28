@@ -11,6 +11,7 @@
         "role": "instructor",
         "about": "I simple instructors ",
         "phone": "016560252154",
+        "totalEnrolled": 916,
         "skills": null
     },
     {
@@ -23,6 +24,7 @@
         "address": "Dhaka , Bangladesh",
         "role": "instructor",
         "phone": "041548545584",
+        "totalEnrolled": 1516,
         "about": "",
         "skills": null
     },
@@ -36,6 +38,7 @@
         "address": "ishwardi",
         "role": "instructor",
         "phone": "+8801858999414",
+        "totalEnrolled": 882,
         "about": "",
         "skills": null
     },
@@ -49,6 +52,7 @@
         "address": "Pabna",
         "role": "instructor",
         "phone": "34725610",
+        "totalEnrolled": 382,
         "about": "",
         "skills": "Instructor"
     },
@@ -62,6 +66,7 @@
         "address": "Dhaka",
         "role": "instructor",
         "phone": "37487458",
+        "totalEnrolled": 516,
         "about": "",
         "skills": null
     },
@@ -75,6 +80,7 @@
         "address": "ishwardi",
         "role": "instructor",
         "phone": "01319373523",
+        "totalEnrolled": 2516,
         "about": "",
         "skills": null
     },
@@ -88,6 +94,7 @@
         "address": "ishwardi",
         "role": "instructor",
         "phone": "01319373523",
+        "totalEnrolled": 11005,
         "about": "",
         "skills": null
     },
@@ -101,6 +108,7 @@
         "about": " ",
         "address": "Bogura",
         "phone": "32123",
+        "totalEnrolled": 103517,
         "skills": null
     }
     

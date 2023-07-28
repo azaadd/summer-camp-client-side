@@ -19,7 +19,7 @@ const PopularClass = () => {
 
     return (
 
-        <div className='mx-16 mb-12 mt-16'>
+        <div className='mx-16 mb-12 mt-20'>
             <p className='text-4xl font-bold text-gray-600 text-center'>Our Most Popular Classes</p>
             <p className='text-center text-lg font-semibold'>Explore your popular class and join your favorite class</p>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-3'>

@@ -2,6 +2,7 @@ import React from 'react';
 
 const PopClasses = ({ PClass }) => {
     const { name, image, availableSeats, price, totalEnrolled } = PClass;
+   
 
     return (
         <div className="card w-full bg-base-100 shadow-xl">

@@ -4,6 +4,7 @@ import Counter from '../Counter/Counter';
 import Facilities from '../facilities/Facilities';
 import { Helmet } from 'react-helmet-async';
 import PopularClass from '../popularclass/PopularClass';
+import PopularInstructors from '../popularInstructor/PopularInstructors';
 
 
 
@@ -16,6 +17,7 @@ const Home = () => {
             <Banner></Banner>
             <Facilities></Facilities>
             <PopularClass></PopularClass>
+            <PopularInstructors></PopularInstructors>
             <Counter></Counter>
         </div>
     );
