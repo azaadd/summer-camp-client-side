@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PopClasses = ({ PClass }) => {
-    const { name, image, availableSeats, price, totalEnrolled } = PClass;
-   
+const PageClass = ({p_class}) => {
+
+    const { name, image, availableSeats, price, totalEnrolled } = p_class;
 
     return (
         <div className="card w-full bg-base-100 shadow-xl">
@@ -22,4 +22,4 @@ const PopClasses = ({ PClass }) => {
     );
 };
 
-export default PopClasses;
+export default PageClass;
