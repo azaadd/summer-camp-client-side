@@ -1,10 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import sitelogo from '../../../assets/sitelogo.JPG';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 
 const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme')? localStorage.getItem('theme') : 'light');
+
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+        .then( () => {})
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
 
     const handleToggle=(e)=>{
         if(e.target.checked){
@@ -26,14 +38,18 @@ const Navbar = () => {
         <li className='mr-2 hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/instructors'>Instructors</Link></li>
 
         <li className='mr-2 hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/classes'>Classes</Link></li>
-        <li className='hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/dashboard'>Dashboard</Link></li>
+
+        {   user?.email ? 
+            <li className='hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/dashboard'>Dashboard</Link></li> :" "
+            
+        }
 
     </>
 
 
     return (
         <div className=''>
-            <div className="px-16 navbar fixed z-10 bg-opacity-50 bg-base-300 text-base-content h-28">
+            <div className="px-16 pt-0 navbar fixed z-10 bg-opacity-60 bg-base-300 text-base-content h-28">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,7 +61,7 @@ const Navbar = () => {
                     </div>
                     <Link className='text-center' to='/'>
                         <p className='text-2xl font-semibold'>Summer Camp</p>
-                        <img src={sitelogo} alt='' className="btn btn-ghost normal-case w-36 h-16 rounded py-1 px-1 bg-white hover:bg-indigo-400"></img>
+                        <img src={sitelogo} alt='' className="btn btn-ghost normal-case w-32 h-14 rounded py-1 px-1 bg-white hover:bg-indigo-400"></img>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -55,14 +71,16 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end">
-                    <img className='rounded-full w-14 h-14 bg-slate-300 mr-3 hover:[cursor:pointer]' src="{user?.photoURL}" title="{user?.displayName}" alt="" />
+                    { user && <img className='rounded-full w-14 h-14 bg-slate-300 mr-3 hover:[cursor:pointer]' src={user?.photoURL} title={user?.displayName} alt="" />
+                    }
 
 
-                    <Link onClick="{handleLogout}" className="btn hover:bg-primary hover:text-white bg-white text-xl">LogOut</Link>
+                    { user?.email ? <Link onClick={handleLogout} className="btn hover:bg-primary hover:text-white bg-white text-xl normal-case">Log Out</Link> 
 
-                    <Link to='/login' className="btn hover:bg-primary hover:text-white bg-white text-xl">Login</Link>
+                    : <Link to='/login' className="btn hover:bg-primary hover:text-white bg-white text-xl normal-case">Login</Link>
+                    }
 
-                    <label className="swap swap-rotate ml-3">
+                    <label title='You can toggle light or dark' className="swap swap-rotate ml-3 hover:bg-white px-2 rounded">
 
                         
                         <input type="checkbox"  onChange={handleToggle} checked={theme === 'light' ? false :true }/>
