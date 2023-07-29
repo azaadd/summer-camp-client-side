@@ -6,7 +6,7 @@ const Classes = () => {
     const [pageClass, setPageClass] = useState([]);
 
     useEffect(() => {
-        fetch('classes.json')
+        fetch('http://localhost:5000/lactures')
         .then(res => res.json())
         .then(data => setPageClass(data))
     },[]);

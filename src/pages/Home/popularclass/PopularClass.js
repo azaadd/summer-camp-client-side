@@ -5,7 +5,7 @@ const PopularClass = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch('classes.json')
+        fetch('http://localhost:5000/lactures')
         .then(res => res.json())
         .then(data => {
             if(data.length > 6){

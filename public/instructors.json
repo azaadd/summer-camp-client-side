@@ -1,7 +1,6 @@
 [
    
     {
-        "_id": "64817dba6600b73c51dd3ad6",
         "name": "Masud Answari",
         "Lecturer": "Arabic Language",
         "email": "answari@gmail.com",
@@ -15,7 +14,6 @@
         "skills": null
     },
     {
-        "_id": "6482c9563c89fb91c4f924b4",
         "name": "Sakura sun",
         "Lecturer": "Japanese language",
         "email": "jarifalnafis1@gmail.com",
@@ -29,7 +27,6 @@
         "skills": null
     },
     {
-        "_id": "64841b305d43fff6d00ca2f1",
         "name": "Rasel Ahamed",
         "Lecturer": "Bangla Language",
         "email": "hasibd4009@gmail.com",
@@ -43,7 +40,6 @@
         "skills": null
     },
     {
-        "_id": "64857a987958eb6ee8feced2",
         "name": "Prokash",
         "Lecturer": "Hindi Language",
         "email": "test@rkb.tech",
@@ -57,7 +53,6 @@
         "skills": "Instructor"
     },
     {
-        "_id": "6485db7393ce971899dca9a0",
         "name": "Jammay J.Montague",
         "Lecturer": "France language",
         "email": "test@test.com",
@@ -71,7 +66,6 @@
         "skills": null
     },
     {
-        "_id": "64872c94d55d94e9bfa0008f",
         "name": "Siking dua",
         "Lecturer": "Chinese language",
         "email": "akibd506@gmail.com",
@@ -85,7 +79,6 @@
         "skills": null
     },
     {
-        "_id": "64872c94d55d94e9bfa0008f",
         "name": "Frank wood",
         "Lecturer": "English language",
         "email": "akibd506@gmail.com",
@@ -100,7 +93,6 @@
     },
     
     {
-        "_id": "64874d82cfbc3adcf4ba88e3",
         "name": "Monkeyaun ma",
         "Lecturer": "Korean language",
         "email": "mokbul1150@gmail.com",
