@@ -12,7 +12,7 @@ const Login = () => {
         <div className="hero bg-base-200 w-full pt-28">
             <div className="hero-content flex-col w-1/2">
                 <div className="text-center">
-                    <h1 className="text-3xl font-bold">Please Login</h1>
+                    <h1 className="text-3xl font-bold text-gray-600">Please Login</h1>
                 </div>
                 <div className="card w-full border bg-base-100">
                     <div className="card-body">
@@ -31,7 +31,7 @@ const Login = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary font-semibold hover:bg-opacity-75" type="submit" value="Login" />
+                                <input className="btn btn-primary font-semibold hover:bg-opacity-75 normal-case text-lg" type="submit" value="Login" />
                             </div>
                             <p className='mt-3'>Don't have any account? <Link className='text-blue-600 font-semibold underline hover:text-gray-600' to='/register'>Register.</Link></p>
                         </form>
