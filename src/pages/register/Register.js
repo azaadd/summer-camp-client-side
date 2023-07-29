@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
+    const [fError, setFError] = useState('');
     const {createUser} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -20,15 +21,36 @@ const Register = () => {
         
         console.log(name, photo, email, password, rePassword)
 
+        // validate
+        if(!/(?=.*[A-Z])/.test(password)){
+            setFError('Please enter your password at least one capital latter');
+            return;
+        }
+        else if(!/(?=.*[!@#$&*])/.test(password)){
+            setFError('Please enter your password at least one special character')
+            return;
+        }
+        else if(password.length < 6) {
+            setFError('Please enter your password at least 6 characters')
+            return;
+        }
+        else if(password !== rePassword){
+            setFError('Confirm password is not matched!')
+            return;
+        }
+
+
         createUser(email, password)
         .then(result => {
             const user = result.user;
             console.log(user);
             form.reset();
+            setFError('');
             navigate(from, {replace: true});
         })
         .catch(error => {
-            console.log(error)
+            console.log(error.message);
+            setFError(error.message);
         })
 
     }
@@ -74,11 +96,14 @@ const Register = () => {
                                 <input type="password" name='rePassword' placeholder="confirm password" className="input input-bordered" required />
                                 
                             </div>
+                            <p className='text-red-600 text-lg'>{fError}</p>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary font-semibold hover:bg-opacity-75 normal-case text-lg" type="submit" value="Register" />
                             </div>
                             <p className='mt-3'>You have already an account? <Link className='text-blue-600 font-semibold underline hover:text-gray-600' to='/login'>Login.</Link></p>
+                            
                         </form>
+                        
                     </div>
                 </div>
             </div>
