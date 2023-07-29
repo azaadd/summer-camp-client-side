@@ -17,7 +17,7 @@ const Instructors = ({instructor}) => {
                 <p>Total Student: {totalEnrolled}</p>
                 <p className='font-semibold'>Email: {email}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary normal-case text-lg md:w-80">Book your appointment</button>
+                    <button className="btn btn-primary hover:bg-opacity-75 normal-case text-lg md:w-80">Book your appointment</button>
                 </div>
             </div>
         </div>

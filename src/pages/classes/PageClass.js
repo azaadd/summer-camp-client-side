@@ -15,7 +15,7 @@ const PageClass = ({p_class}) => {
                 <p>Price: $ {price}.00</p>
                 <p>Total Student: {totalEnrolled}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary normal-case text-lg md:w-80">Select your Class</button>
+                    <button className="btn btn-primary hover:bg-opacity-75 normal-case text-lg md:w-80">Select your Class</button>
                 </div>
             </div>
         </div>

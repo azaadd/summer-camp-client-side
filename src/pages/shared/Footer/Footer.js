@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
+import sitelogo from '../../../assets/sitelogo.JPG';
 
 const Footer = () => {
     return (
         <div>
             <footer className="px-16 footer p-10 bg-base-200 text-base-content">
-                <div>
-                    <img src="{logo}" alt="" />
-                    <p>This is our language teaching school.<br />Learn your favorite language.</p>
-                </div>
+                <Link>
+                    <p className='text-2xl font-semibold'>Summer Camp</p>
+                    <img src={sitelogo} className='btn btn-ghost normal-case w-40 h-20 rounded py-1 px-1 bg-white hover:bg-indigo-400' alt="" />
+                    <p className='font-semibold'>This is our language teaching school.<br />Learn your favorite language.</p>
+                </Link>
                 <div className=''>
                     <span className="footer-title">Let's  connect</span>
                     <div className='flex gap-2 text-4xl'>

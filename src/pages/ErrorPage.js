@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useRouteError } from 'react-router-dom';
 import errorGift from '../assets/error.gif';
+import { Helmet } from 'react-helmet-async';
 
 const ErrorPage = () => {
 
@@ -8,6 +9,9 @@ const ErrorPage = () => {
 
     return (
         <div className='max-w-6xl mt-16 mx-auto'>
+            <Helmet>
+                <title>Language School | 404 error page</title>
+            </Helmet>
             <div id="error-page" className="items-center m-5">
                 <div className="text-center mx-auto items-center">
                     <img className="rounded w-[500px] mx-auto text-center" src={errorGift} alt="" />
