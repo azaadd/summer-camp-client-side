@@ -41,6 +41,13 @@ const Register = () => {
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 
                             </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-semibold text-lg">Confirm Password</span>
+                                </label>
+                                <input type="password" name='rePassword' placeholder="confirm password" className="input input-bordered" required />
+                                
+                            </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary font-semibold hover:bg-opacity-75 normal-case text-lg" type="submit" value="Register" />
                             </div>
