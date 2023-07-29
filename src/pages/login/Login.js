@@ -4,7 +4,7 @@ import googlelogo from '../../../src/assets/google.png';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn, signInWithGoogle} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -29,6 +29,18 @@ const Login = () => {
             console.log(error)
         })
 
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, {replace: true});
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
 
     return (
@@ -63,7 +75,7 @@ const Login = () => {
                     
                 </div>
                 
-                <Link className="btn btn-outline border-2 normal-case text-xl text-[#0d6efd] hover:bg-[#0d6efd] w-full mb-6" type="submit"> <img className='w-7 h-7' src={googlelogo} alt="" /> Sign-in With Google</Link>
+                <Link onClick={handleGoogleSignIn} className="btn btn-outline border-2 normal-case text-xl text-[#0d6efd] hover:bg-[#0d6efd] w-full mb-6" type="submit"> <img className='w-7 h-7' src={googlelogo} alt="" /> Sign-in With Google</Link>
             </div>
 
         </div >
