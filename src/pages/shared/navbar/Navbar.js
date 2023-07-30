@@ -34,13 +34,13 @@ const Navbar = () => {
     },[theme]);
 
     const navItems = <>
-        <li className='mr-2 hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/'>Home</Link></li>
-        <li className='mr-2 hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/instructors'>Instructors</Link></li>
+        <li className='mr-2 hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/'>Home</Link></li>
+        <li className='mr-2 hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/instructors'>Instructors</Link></li>
 
-        <li className='mr-2 hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/classes'>Classes</Link></li>
+        <li className='mr-2 hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/classes'>Classes</Link></li>
 
         {   user?.email ? 
-            <li className='hover:bg-gray-600 hover:rounded hover:bg-opacity-40'><Link to='/dashboard'>Dashboard</Link></li> :" "
+            <li className='hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/dashboard'>Dashboard</Link></li> :" "
             
         }
 
@@ -75,12 +75,12 @@ const Navbar = () => {
                     }
 
 
-                    { user?.email ? <Link onClick={handleLogout} className="btn hover:bg-primary hover:text-white bg-white text-xl normal-case">Log Out</Link> 
+                    { user?.email ? <Link onClick={handleLogout} className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white text-xl normal-case">Log Out</Link> 
 
-                    : <Link to='/login' className="btn hover:bg-primary hover:text-white bg-white text-xl normal-case">Login</Link>
+                    : <Link to='/login' className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white text-xl normal-case">Login</Link>
                     }
 
-                    <label title='You can toggle light or dark' className="swap swap-rotate ml-3 hover:bg-white px-2 rounded">
+                    <label title='You can toggle light or dark' className="swap swap-rotate ml-3 hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border border-gray-500 hover:text-white px-2 py-1 rounded">
 
                         
                         <input type="checkbox"  onChange={handleToggle} checked={theme === 'light' ? false :true }/>

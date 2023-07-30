@@ -22,7 +22,7 @@ const Counter = () => {
                     className='text-5xl font-bold'
                     start={350} 
                     end={17}
-                    duration={4}
+                    duration={3}
                     enableScrollSpy
                 />
                 <span className='text-5xl font-bold'>M+</span>
@@ -33,7 +33,7 @@ const Counter = () => {
                     className='text-5xl font-bold'
                     start={4520}
                     end={81}
-                    duration={4}
+                    duration={3}
                     enableScrollSpy
                 />
                 <span className='text-5xl font-bold'>k+</span>
@@ -44,7 +44,7 @@ const Counter = () => {
                 className='text-5xl font-bold'
                     start={5020}
                     end={305}
-                    duration={4}
+                    duration={3}
                     enableScrollSpy
                 />
                 <span className='text-5xl font-bold'>k+</span>
@@ -55,7 +55,7 @@ const Counter = () => {
                 className='text-5xl font-bold'
                     start={5550}
                     end={558}
-                    duration={4}
+                    duration={3}
                     enableScrollSpy
                 />
                 <span className='text-5xl font-bold'>k+</span>

@@ -1,8 +1,45 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const PopClasses = ({ PClass }) => {
     const { name, image, availableSeats, price, totalEnrolled } = PClass;
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
    
+    const handleAddToSelect = PClass => {
+        console.log(PClass);
+        if(user){
+            fetch('http://localhost:5000/selectItems')
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+        }
+        else{
+            Swal.fire({
+                title: 'Please login first for selecting the class?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Login now!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate('/login');
+                }
+              })
+        }
+    }
 
     return (
         <div className="card w-full bg-base-100 shadow-xl">
@@ -15,7 +52,7 @@ const PopClasses = ({ PClass }) => {
                 <p>Price: $ {price}.00</p>
                 <p>Total Student: {totalEnrolled}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary hover:bg-opacity-75 normal-case text-lg md:w-80">Select your Class</button>
+                    <button onClick={() => handleAddToSelect(PClass)} className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white normal-case text-lg md:w-80">Select your Class</button>
                 </div>
             </div>
         </div>
