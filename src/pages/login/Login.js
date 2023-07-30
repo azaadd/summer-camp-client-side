@@ -4,6 +4,7 @@ import googlelogo from '../../../src/assets/google.png';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+    const [fError, setFError] = useState('');
     const [isShown, setIsSHown] = useState(false);
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const location = useLocation();
@@ -27,7 +28,8 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
+                setFError(error.message);
             })
 
     }
@@ -80,6 +82,7 @@ const Login = () => {
                                 />
                                 <label className='text-lg'  htmlFor="checkbox">Show password?</label>
                             </div>
+                            <p className='text-red-600 text-lg'>{fError}</p>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary font-semibold hover:bg-opacity-75 normal-case text-lg" type="submit" value="Login" />
                             </div>

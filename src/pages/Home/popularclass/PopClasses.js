@@ -1,24 +1,35 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
 import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import useCart from '../../../hooks/useCart';
 
 const PopClasses = ({ PClass }) => {
-    const { name, image, availableSeats, price, totalEnrolled } = PClass;
+    const { name, image, availableSeats, price, totalEnrolled, _id } = PClass;
     const {user} = useContext(AuthContext);
+    const [, refetch] = useCart();
     const navigate = useNavigate();
+    const location = useLocation();
    
     const handleAddToSelect = PClass => {
         console.log(PClass);
-        if(user){
-            fetch('http://localhost:5000/selectItems')
+        if(user && user.email){
+            const cartItem = {selectItemId: name, image, price, _id, email: user.email }
+            fetch('http://localhost:5000/selectItems', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(cartItem)
+            })
             .then(res => res.json())
             .then(data => {
                 if(data.insertedId){
+                    refetch(); // refetch the cart number of item
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Your class has been saved in cart',
                         showConfirmButton: false,
                         timer: 1500
                       })
@@ -35,7 +46,7 @@ const PopClasses = ({ PClass }) => {
                 confirmButtonText: 'Login now!'
               }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login');
+                    navigate('/login', {state: {from:location}});
                 }
               })
         }

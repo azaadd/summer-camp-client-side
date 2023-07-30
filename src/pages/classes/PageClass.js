@@ -1,22 +1,33 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import useCart from '../../hooks/useCart';
 
 const PageClass = ({ p_class }) => {
 
-    const { name, image, availableSeats, price, totalEnrolled } = p_class;
+    const { name, image, availableSeats, price, totalEnrolled, _id } = p_class;
     const { user } = useContext(AuthContext);
+    const [, refetch] = useCart();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleAddToSelect = p_class => {
         console.log(p_class);
 
-        if (user) {
-            fetch('http://localhost:5000/selectItems')
+        if (user && user.email) {
+            const cartItem = {selectItemId: name, image, price, _id, email: user.email }
+            fetch('http://localhost:5000/selectItems', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(cartItem)
+            })
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch(); // refetch the cart number of item
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
@@ -37,7 +48,7 @@ const PageClass = ({ p_class }) => {
                 confirmButtonText: 'Login now!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate('/login');
+                    navigate('/login', {state: {from:location}});
                 }
             })
         }

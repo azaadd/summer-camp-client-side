@@ -40,7 +40,7 @@ const Navbar = () => {
         <li className='mr-2 hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/classes'>Classes</Link></li>
 
         {   user?.email ? 
-            <li className='hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/dashboard'>Dashboard</Link></li> :" "
+            <li className='hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/dashboard/my_cart'>Dashboard</Link></li> :" "
             
         }
 
