@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googlelogo from '../../../src/assets/google.png';
 import { AuthContext } from '../../providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const [fError, setFError] = useState('');
@@ -39,7 +41,21 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from, { replace: true });
+
+                const saveduser = { name: loggedUser.displayName, email: loggedUser.email }
+
+                fetch('http://localhost:5000/usersInfo', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveduser)
+                        })
+                            .then(res => res.json())
+                            .then(() => {
+                                navigate(from, { replace: true });
+                            })
+                
             })
             .catch(error => {
                 console.log(error);
@@ -53,6 +69,9 @@ const Login = () => {
 
     return (
         <div className="hero bg-base-200 w-full pt-28">
+            <Helmet>
+                <title>Language School | Login</title>
+            </Helmet>
             <div className="hero-content flex-col w-1/2">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-gray-600">Please Login</h1>

@@ -2,9 +2,14 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
+import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
+
+
 const Register = () => {
+
     const [fError, setFError] = useState('');
-    const {createUser} = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -14,49 +19,80 @@ const Register = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const photo = form.photo.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
         const rePassword = form.rePassword.value;
-        
-        console.log(name, photo, email, password, rePassword)
+
+        console.log(name, photoURL, email, password, rePassword)
 
         // validate
-        if(!/(?=.*[A-Z])/.test(password)){
+        if (!/(?=.*[A-Z])/.test(password)) {
             setFError('Please enter your password at least one capital latter');
             return;
         }
-        else if(!/(?=.*[!@#$&*])/.test(password)){
+        else if (!/(?=.*[!@#$&*])/.test(password)) {
             setFError('Please enter your password at least one special character')
             return;
         }
-        else if(password.length < 6) {
+        else if (password.length < 6) {
             setFError('Please enter your password at least 6 characters')
             return;
         }
-        else if(password !== rePassword){
+        else if (password !== rePassword) {
             setFError('Confirm password is not matched!')
             return;
         }
 
 
         createUser(email, password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            form.reset();
-            setFError('');
-            navigate(from, {replace: true});
-        })
-        .catch(error => {
-            console.log(error.message);
-            setFError(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+
+                updateUserProfile(name, photoURL)
+                    .then(() => {
+                        const saveduser = { name: name, email: email }
+
+                        fetch('http://localhost:5000/usersInfo', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveduser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    console.log('user profile info updated')
+                                    Swal.fire({
+                                        position: 'top-center',
+                                        icon: 'success',
+                                        title: 'User created has been successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    form.reset();
+                                    setFError('');
+                                    navigate(from, { replace: true });
+                                }
+                            })
+
+                    })
+
+            })
+            .catch(error => {
+                console.log(error.message);
+                setFError(error.message);
+            })
 
     }
 
     return (
         <div className="hero bg-base-200 w-full pt-28">
+            <Helmet>
+                <title>Language School | Register</title>
+            </Helmet>
             <div className="hero-content flex-col w-1/2">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-gray-600">Please Register</h1>
@@ -74,7 +110,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text font-semibold text-lg">Photo URL</span>
                                 </label>
-                                <input type="text" name='photo' placeholder="photo" className="input input-bordered" required />
+                                <input type="text" name='photoURL' placeholder="photo" className="input input-bordered" required />
                             </div>
                             <div className="form-control mb-3">
                                 <label className="label">
@@ -87,25 +123,26 @@ const Register = () => {
                                     <span className="label-text font-semibold text-lg">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                                
+
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text font-semibold text-lg">Confirm Password</span>
                                 </label>
                                 <input type="password" name='rePassword' placeholder="confirm password" className="input input-bordered" required />
-                                
+
                             </div>
                             <p className='text-red-600 text-lg'>{fError}</p>
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary font-semibold hover:bg-opacity-75 normal-case text-lg" type="submit" value="Register" />
                             </div>
                             <p className='mt-3'>You have already an account? <Link className='text-blue-600 font-semibold underline hover:text-gray-600' to='/login'>Login.</Link></p>
-                            
+
                         </form>
-                        
+
                     </div>
                 </div>
+                
             </div>
         </div>
     );

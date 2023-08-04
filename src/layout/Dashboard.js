@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet, FaChalkboardTeacher, FaBookOpen } from 'react-icons/fa';
+import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet, FaChalkboardTeacher, FaBookOpen, FaAddressCard, FaUsers, FaMarkdown, FaBook } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
+import useCart from '../hooks/useCart';
 
 
 const Dashboard = () => {
+
+    const [cart] = useCart();
+
+    const isAdmin = true;
+
+
     return (
         <div className=''>
             <Helmet>
@@ -22,22 +29,45 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full ">
+                    <ul className="menu p-4 w-64 h-full ">
+
+                        {
+                            isAdmin ? <>
+                                <li><Link to='/dashboard/user_dash'><FaHome className='text-xl'></FaHome>Admin Home</Link></li>
+
+                                <li><Link to='/dashboard/add_items'><FaAddressCard className='text-xl'></FaAddressCard>Add Items</Link></li>
+
+                                <li><Link to='/dashboard/manage_items'><FaMarkdown
+                                 className='text-xl'></FaMarkdown>Manage Items</Link></li>
+                                <li><Link to='/dashboard/manage_booking'><FaBook className='text-xl'></FaBook>Manage Bookings</Link></li>
+                                <li><Link to='/dashboard/all_users'><FaUsers className='text-xl'></FaUsers>All Users</Link></li>
+
+                                
+                            </>
+                                : <>
+                                    <li><Link to='/dashboard/user_dash'><FaHome className='text-xl'></FaHome>User Home</Link></li>
+
+                                    <li><Link to='/dashboard/reservation'><FaCalendarAlt className='text-xl'></FaCalendarAlt>Reservations</Link></li>
+
+                                    <li><Link to='/dashboard/pay_history'><FaWallet className='text-xl'></FaWallet>Payment history</Link></li>
+
+                                    <li>
+                                        <Link className='mr-14' to='/dashboard/my_cart'><FaShoppingCart className='text-xl'></FaShoppingCart>My Cart
+                                            <span className='badge badge-secondary'>+{cart?.length || 0}</span>
+                                        </Link>
+                                    </li>
+                                </>
+                        }
+
                         {/* Sidebar content here */}
-                        <li><Link to='/dashboard/user_dash'><FaHome className='text-xl'></FaHome>User Home</Link></li>
-                        
-                        <li><Link to='/dashboard/reservation'><FaCalendarAlt className='text-xl'></FaCalendarAlt>Reservations</Link></li>
 
-                        <li><Link to='/dashboard/pay_history'><FaWallet className='text-xl'></FaWallet>Payment history</Link></li>
-
-                        <li><Link to='/dashboard/my_cart'><FaShoppingCart className='text-xl'></FaShoppingCart>My Cart</Link></li>
 
                         <div className="divider"></div>
                         <li><Link to='/'><FaHome className='text-xl'></FaHome>Home</Link></li>
                         <li><Link to='/instructors'><FaChalkboardTeacher className='text-xl'></FaChalkboardTeacher>Instructors</Link></li>
                         <li><Link to='/classes'><FaBookOpen
-                         className='text-xl'></FaBookOpen>Classes</Link></li>
-                        
+                            className='text-xl'></FaBookOpen>Classes</Link></li>
+
                     </ul>
 
                 </div>
