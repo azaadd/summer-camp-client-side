@@ -1,8 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { useCountUp } from 'react-countup';
-// import CountUp from 'react-countup/build/CountUp';
-// import { useCountUp } from 'react-countup';
 
 
 const Counter = () => {
