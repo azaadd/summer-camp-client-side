@@ -4,9 +4,11 @@ import sitelogo from '../../../assets/sitelogo.JPG';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 
+
+
 const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme')? localStorage.getItem('theme') : 'light');
-
+    
     const {user, logOut} = useContext(AuthContext);
 
     const handleLogout = () => {
@@ -40,7 +42,7 @@ const Navbar = () => {
         <li className='mr-2 hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/classes'>Classes</Link></li>
 
         {   user?.email ? 
-            <li className='hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/dashboard/my_cart'>Dashboard</Link></li> :" "
+            <li className='hover:bg-gray-700 hover:rounded hover:bg-opacity-60 border rounded border-gray-500 hover:border-white'><Link className='hover:text-white' to='/dashboard'>Dashboard</Link></li> :" "
             
         }
 
@@ -49,7 +51,7 @@ const Navbar = () => {
 
     return (
         <div className=''>
-            <div className="px-16 pt-0 navbar fixed z-10 bg-opacity-60 bg-base-300 text-base-content h-28">
+            <div className="md:px-16 pt-0 navbar fixed z-10 bg-opacity-60 bg-base-300 text-base-content h-28">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

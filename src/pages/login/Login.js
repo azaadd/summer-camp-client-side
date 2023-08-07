@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googlelogo from '../../../src/assets/google.png';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
-import Swal from 'sweetalert2';
+
 
 const Login = () => {
     const [fError, setFError] = useState('');

@@ -1,26 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FaCalendarAlt, FaHome, FaShoppingCart, FaWallet, FaChalkboardTeacher, FaBookOpen, FaAddressCard, FaUsers, FaMarkdown, FaBook } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 import useCart from '../hooks/useCart';
+import useAdmin from '../hooks/useAdmin';
+import { AuthContext } from '../providers/AuthProvider';
+
+
 
 
 const Dashboard = () => {
 
     const [cart] = useCart();
+    
 
-    const isAdmin = true;
-
+    const [isAdmin] = useAdmin();
 
     return (
         <div className=''>
             <Helmet>
                 <title>Language School | Dashboard</title>
             </Helmet>
+
+
+
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
                     {/* Page content here */}
+                    
+
 
                     <Outlet></Outlet>
 
@@ -33,21 +42,19 @@ const Dashboard = () => {
 
                         {
                             isAdmin ? <>
-                                <li><Link to='/dashboard/user_dash'><FaHome className='text-xl'></FaHome>Admin Home</Link></li>
+                                <li><Link to='/dashboard/admin_home'><FaHome className='text-xl'></FaHome>Admin Home</Link></li>
 
-                                <li><Link to='/dashboard/add_items'><FaAddressCard className='text-xl'></FaAddressCard>Add Items</Link></li>
+                                <li><Link to='/dashboard/add_items'><FaAddressCard className='text-xl'></FaAddressCard>Add Classes</Link></li>
 
                                 <li><Link to='/dashboard/manage_items'><FaMarkdown
-                                 className='text-xl'></FaMarkdown>Manage Items</Link></li>
+                                    className='text-xl'></FaMarkdown>Manage Classes</Link></li>
                                 <li><Link to='/dashboard/manage_booking'><FaBook className='text-xl'></FaBook>Manage Bookings</Link></li>
                                 <li><Link to='/dashboard/all_users'><FaUsers className='text-xl'></FaUsers>All Users</Link></li>
 
-                                
+
                             </>
                                 : <>
-                                    <li><Link to='/dashboard/user_dash'><FaHome className='text-xl'></FaHome>User Home</Link></li>
-
-                                    <li><Link to='/dashboard/reservation'><FaCalendarAlt className='text-xl'></FaCalendarAlt>Reservations</Link></li>
+                                    <li><Link to='/dashboard/user_home'><FaHome className='text-xl'></FaHome>User Home</Link></li>
 
                                     <li><Link to='/dashboard/pay_history'><FaWallet className='text-xl'></FaWallet>Payment history</Link></li>
 

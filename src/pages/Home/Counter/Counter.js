@@ -13,7 +13,7 @@ const Counter = () => {
     });
 
     return (
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-24 text-center justify-center py-8 bg-neutral-200 text-gray-700'>
+        <div className='grid grid-cols-1 md:grid-cols-4 gap-24 text-center justify-center py-8 bg-neutral-200 text-gray-700'>
 
             <div className=''>
                 <CountUp

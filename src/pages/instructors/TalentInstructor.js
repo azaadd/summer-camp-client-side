@@ -3,6 +3,10 @@ import React from 'react';
 const TalentInstructor = ({instructor}) => {
     const {photoUrl, name, Lecturer, totalEnrolled, email} = instructor;
 
+    const handleToSelect = () => {
+        alert('Currently not allowed for appointment')
+    }
+
     return (
         <div className="card w-full bg-base-100 shadow-xl">
             <figure className="px-3 pt-3">
@@ -14,7 +18,7 @@ const TalentInstructor = ({instructor}) => {
                 <p>Total Student: {totalEnrolled}</p>
                 <p className='font-semibold'>Email: {email}</p>
                 <div className="card-actions">
-                    <button className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white normal-case text-lg md:w-80">Book your appointment</button>
+                    <button onClick={handleToSelect} className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white normal-case text-lg md:w-80">Book your appointment</button>
                 </div>
             </div>
         </div>

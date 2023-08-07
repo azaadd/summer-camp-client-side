@@ -3,10 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
+import useAdmin from '../../hooks/useAdmin';
 
 
 const Classes = () => {
     const [pageClass, setPageClass] = useState([]);
+    const [isAdmin] = useAdmin();
 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -84,7 +86,9 @@ const Classes = () => {
                             <p>Price: $ {p_class.price}.00</p>
                             <p>Total Student: {p_class.totalEnrolled}</p>
                             <div className="card-actions">
-                                <button onClick={() => handleAddToSelect(p_class)} disabled={p_class.availableSeats === 0} className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white normal-case text-lg md:w-80">Select your Class</button>
+                                { user ? <button onClick={() => handleAddToSelect(p_class)} disabled={p_class.availableSeats === 0 || isAdmin} className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white normal-case text-lg md:w-80">Select your Class</button>
+
+                                :<button onClick={() => handleAddToSelect(p_class)} className="btn btn-ghost hover:bg-gray-700 hover:border-white hover:bg-opacity-60 border-gray-500 hover:text-white normal-case text-lg md:w-80">Select your Class</button>}
 
                             </div>
                         </div>

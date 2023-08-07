@@ -9,6 +9,7 @@ import { router } from './routes/Routes';
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from './providers/AuthProvider';
 
+
 import {
   QueryClient,
   QueryClientProvider,
