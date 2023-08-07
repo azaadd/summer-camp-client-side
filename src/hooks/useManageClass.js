@@ -12,7 +12,7 @@ const useManageClass = () => {
         queryKey: ['lactures'],
         enabled: !loading,
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/lactures`)
+            const res = await fetch(`https://b7a12-summer-camp-server-side-beta.vercel.app/lactures`)
             
             return res.json();
         },

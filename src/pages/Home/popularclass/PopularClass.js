@@ -7,7 +7,7 @@ const PopularClass = () => {
     const [classes, setClasses] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/lactures')
+        fetch('https://b7a12-summer-camp-server-side-beta.vercel.app/lactures')
             .then(res => res.json())
             .then(data => {
                 if (data.length > 6) {

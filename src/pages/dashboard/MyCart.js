@@ -27,7 +27,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectItems/${item._id}`, {
+                fetch(`https://b7a12-summer-camp-server-side-beta.vercel.app/selectItems/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

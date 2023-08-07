@@ -5,7 +5,7 @@ This project was tailwind and daisyUi with Create React App.
 ## WebSite Name : Summer Camp LANGUAGE SCHOOL
 
 ## Learn More
-This project create with tailwind css, daisyUi, react-app, react-js, firebase and mongodb. [can you see this website.. please visit now](https://github.com/facebook/create-react-app).
+This project create with tailwind css, daisyUi, react-app, react-js, firebase and mongodb. [can you see this website.. please visit now](https://language-school-1be90.web.app).
 
 ### Some Features of this website:
 
@@ -26,4 +26,4 @@ This project create with tailwind css, daisyUi, react-app, react-js, firebase an
 * There is some validation in register page like password must be at least six character long, password at lest one capital letter, password at lest one special character and email and password field can't be empty.
 
 ### Live Site Link
-##: https://toy-marketplace-ba637.web.app
+##: https://language-school-1be90.web.app

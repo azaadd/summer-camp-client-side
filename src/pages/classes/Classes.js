@@ -15,7 +15,7 @@ const Classes = () => {
     const location = useLocation();
 
     useEffect(() => {
-        fetch('http://localhost:5000/lactures')
+        fetch('https://b7a12-summer-camp-server-side-beta.vercel.app/lactures')
             .then(res => res.json())
             .then(data => setPageClass(data))
     }, []);
@@ -27,7 +27,7 @@ const Classes = () => {
             const cartItem = { name: p_class.name, image: p_class.image, price: p_class.price, selectedId: p_class._id, email: user.email }
 
             console.log(cartItem);
-            fetch('http://localhost:5000/selectItems', {
+            fetch('https://b7a12-summer-camp-server-side-beta.vercel.app/selectItems', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
